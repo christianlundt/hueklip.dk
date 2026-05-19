@@ -6,7 +6,7 @@ const clips = [
     name: "Kassen",
     desc: "Drik 24 genstande på 24 timer",
     detail: "Har du hvad der skal til? 24 genstande på 24 timer og Firkants-klippet er dit! Laver du denne to dage i streg, kan du lave højhuset, hvor der placeres to kasser ovenpå hinanden!",
-    example: "/logo.png"
+    example: ""
   },
   {
     id: "firkanten",
@@ -21,6 +21,7 @@ const clips = [
     id: "trekanten",
     classic: true,
     icon: "fa-solid fa-play",
+    rotation: -90,
     name: "Trekanten",
     desc: "Fest indtil solopgang",
     detail: "Kan du holde dig vågen hele natten? Du får måske brug for en energidrik eller to, men fester du til solopgang, så har du fortjent en Trekant i huen!",
@@ -81,6 +82,7 @@ const clips = [
   {
     id: "kornet",
     icon: "fa-solid fa-wheat-awn",
+    rotation: -45,
     name: "Kornet",
     desc: "Løb nøgen gennem en kornmark!",
     detail: "Smid tøjet, tag huen på og løb gennem en kornmark! Nu må du klippe Kornet. Husk også at tage et strå fra marken og placer det mellem huen og yderbetrækket!",
@@ -144,161 +146,13 @@ const clips = [
   }
 ];
 
-const classicTbody = document.getElementById("clip-tbody-classic");
-const restTbody = document.getElementById("clip-tbody-rest");
-const searchInput = document.getElementById("clip-search");
-const searchMeta = document.getElementById("search-meta");
-const noResults = document.getElementById("no-results");
-const classicTitle = document.getElementById("classic-title");
-const sectionDivider = document.getElementById("section-divider");
-const overlay = document.getElementById("modal-overlay");
-const modalTitle = document.getElementById("modal-title");
-const modalIcon = document.getElementById("modal-icon");
-const modalExample = document.getElementById("modal-example");
-const modalBody = document.getElementById("modal-body");
-const modalClose = document.getElementById("modal-close");
-
-let lastFocused = null;
-
-const VIDEO_EXT = /\.(mp4|webm|ogg|mov)(\?.*)?$/i;
-
-function escapeHtml(str) {
-  const div = document.createElement("div");
-  div.textContent = str;
-  return div.innerHTML;
-}
-
-function escapeAttr(str) {
-  return str.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
-}
-
-function hasExample(clip) {
-  return typeof clip.example === "string" && clip.example.trim() !== "";
-}
-
-function renderExampleMarkup(clip) {
-  if (!hasExample(clip)) return "";
-
-  const path = clip.example.trim();
-  const alt = `Eksempel på ${clip.name}`;
-
-  if (VIDEO_EXT.test(path)) {
-    return `<figure class="modal-example"><video src="${escapeAttr(path)}" controls playsinline preload="metadata" title="${escapeAttr(alt)}"></video></figure>`;
-  }
-
-  return `<figure class="modal-example"><img src="${escapeAttr(path)}" alt="${escapeAttr(alt)}" loading="lazy"></figure>`;
-}
-
-function createRow(clip) {
-  const tr = document.createElement("tr");
-  tr.tabIndex = 0;
-  tr.dataset.id = clip.id;
-  tr.setAttribute("role", "row");
-  tr.innerHTML = `
-    <td class="col-icon" role="gridcell"><i class="${clip.icon}" aria-hidden="true"></i></td>
-    <td class="col-name" role="gridcell">${escapeHtml(clip.name)}</td>
-    <td class="col-desc" role="gridcell">${escapeHtml(clip.desc)}</td>
-  `;
-  tr.addEventListener("click", () => openModal(clip, tr));
-  tr.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      openModal(clip, tr);
-    }
-  });
-  return tr;
-}
-
-function renderRows(filter = "") {
-  const q = filter.trim().toLowerCase();
-  classicTbody.innerHTML = "";
-  restTbody.innerHTML = "";
-  let visibleClassic = 0;
-  let visibleRest = 0;
-
-  clips.forEach((clip) => {
-    const haystack = (clip.name + " " + clip.desc + " " + clip.detail).toLowerCase();
-    if (q && !haystack.includes(q)) return;
-
-    const row = createRow(clip);
-    if (clip.classic) {
-      classicTbody.appendChild(row);
-      visibleClassic++;
-    } else {
-      restTbody.appendChild(row);
-      visibleRest++;
-    }
-  });
-
-  const visibleTotal = visibleClassic + visibleRest;
-  const isSearching = q.length > 0;
-
-  noResults.classList.toggle("visible", visibleTotal === 0);
-  classicTitle.classList.toggle("clip-section__title--hidden", visibleClassic === 0 || isSearching);
-  sectionDivider.classList.toggle("section-divider--hidden", visibleClassic === 0 || visibleRest === 0 || isSearching);
-
-  searchMeta.textContent = isSearching
-    ? `${visibleTotal} hue-klip fundet`
-    : `${clips.length} hue-klip i alt`;
-}
-
-function verticalAdHtml() {
-  return `
-    <div class="ad-placeholder ad-placeholder--vertical-banner">
-      <small>Google Ads</small>
-      <span>300 × 250</span>
-      <small>Vertikal banner</small>
-    </div>
-  `;
-}
-
-function openModal(clip, row) {
-  lastFocused = row;
-  modalTitle.textContent = clip.name;
-  modalIcon.innerHTML = `<i class="${clip.icon}"></i>`;
-
-  if (hasExample(clip)) {
-    modalExample.innerHTML = renderExampleMarkup(clip);
-    modalExample.hidden = false;
-  } else {
-    modalExample.innerHTML = "";
-    modalExample.hidden = true;
-  }
-
-  modalBody.innerHTML = `
-    <p><strong>Kort:</strong> ${escapeHtml(clip.desc)}</p>
-    <p>${escapeHtml(clip.detail)}</p>
-    <p>Kender du variationer af dette klip? Skriv til <a href="mailto:info@hueklip.dk">info@hueklip.dk</a>.</p>
-  `;
-
-  overlay.hidden = false;
-  overlay.classList.add("open");
-  document.body.style.overflow = "hidden";
-  modalClose.focus();
-}
-
-function closeModal() {
-  const video = modalExample.querySelector("video");
-  if (video) video.pause();
-
-  overlay.classList.remove("open");
-  overlay.hidden = true;
-  document.body.style.overflow = "";
-  if (lastFocused) lastFocused.focus();
-}
-
-searchInput.addEventListener("input", () => renderRows(searchInput.value));
-
-modalClose.addEventListener("click", closeModal);
-overlay.addEventListener("click", (e) => {
-  if (e.target === overlay) closeModal();
+initHuePage(clips, {
+  searchLabel: "Søg i hue-klip",
+  searchPlaceholder: "Søg på navn eller beskrivelse…",
+  classicTitle: "De klassiske",
+  classicAria: "De klassiske hue-klip",
+  restAria: "Øvrige hue-klip",
+  noResults: "Ingen hue-klip matcher din søgning.",
+  countLabel: "hue-klip",
+  modalContact: 'Kender du variationer af dette klip? Skriv til <a href="mailto:info@hueklip.dk">info@hueklip.dk</a>.'
 });
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && overlay.classList.contains("open")) closeModal();
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("list-bottom-ad").innerHTML = verticalAdHtml();
-document.getElementById("modal-bottom-ad").innerHTML = verticalAdHtml();
-
-renderRows();

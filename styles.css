@@ -44,12 +44,36 @@ body {
   padding: 0.875rem 0;
 }
 
+.navbar .site-center {
+  max-width: calc(var(--content-max) + var(--ad-width) * 2 + 5rem);
+}
+
 .navbar-inner {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
-  text-align: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.navbar-nav__link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.navbar-nav__link:hover,
+.navbar-nav__link--active {
+  color: var(--accent);
 }
 
 .navbar-brand {
@@ -63,12 +87,16 @@ body {
   color: var(--accent-hover);
 }
 
+.navbar-logo {
+  display: block;
+  flex-shrink: 0;
+}
+
 .navbar-logo img {
   display: block;
   height: 52px;
   width: auto;
   max-width: 140px;
-  margin: 0 auto;
 }
 
 /* Fullscreen intro */
@@ -115,24 +143,17 @@ body {
   color: var(--accent-hover);
 }
 
-/* Indhold med side-reklamer (starter under intro) */
-.content-with-ads {
-  position: relative;
+/* Indhold (starter under intro) */
+.content-area {
   padding: 2.5rem 0 4rem;
 }
 
-.content-with-ads__inner {
+.list-with-ads {
   position: relative;
 }
 
-@media (min-width: 1100px) {
-  .content-with-ads__inner {
-    max-width: calc(var(--content-max) + var(--ad-width) * 2 + 5rem);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: calc(var(--ad-width) + 1.5rem);
-    padding-right: calc(var(--ad-width) + 1.5rem);
-  }
+.list-with-ads__content {
+  min-width: 0;
 }
 
 .ad-side {
@@ -140,19 +161,36 @@ body {
 }
 
 @media (min-width: 1100px) {
+  .list-with-ads {
+    display: grid;
+    grid-template-columns: var(--ad-width) minmax(0, 1fr) var(--ad-width);
+    grid-template-areas: "ad-left list ad-right";
+    gap: 1.5rem;
+    align-items: start;
+    max-width: calc(var(--content-max) + var(--ad-width) * 2 + 5rem);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
   .ad-side {
     display: block;
-    position: absolute;
-    top: 2.5rem;
+    position: sticky;
+    top: 1.5rem;
     width: var(--ad-width);
   }
 
   .ad-side--left {
-    left: 1.25rem;
+    grid-area: ad-left;
   }
 
   .ad-side--right {
-    right: 1.25rem;
+    grid-area: ad-right;
+  }
+
+  .list-with-ads__content {
+    grid-area: list;
   }
 }
 
@@ -179,11 +217,12 @@ body {
   min-height: 600px;
 }
 
-.ad-placeholder--vertical-banner {
-  min-height: 250px;
+.ad-placeholder--landscape {
   width: 100%;
-  max-width: 300px;
+  max-width: 728px;
+  min-height: 70px;
   margin: 0 auto;
+  padding: 0.75rem 1rem;
 }
 
 .page-main {
@@ -313,6 +352,10 @@ body {
   color: var(--accent);
 }
 
+.clip-list .col-icon i {
+  display: inline-block;
+}
+
 .clip-list .col-name {
   font-weight: 600;
   font-size: 1.05rem;
@@ -380,6 +423,10 @@ body {
   transition: transform 0.2s ease;
 }
 
+.modal--with-example {
+  max-width: 720px;
+}
+
 .modal-overlay.open .modal {
   transform: scale(1);
 }
@@ -395,21 +442,56 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.modal-icon i {
+  display: inline-block;
+}
+
 .modal-header h2 {
   margin: 0;
   font-size: 1.35rem;
 }
 
-.modal-example {
-  margin: 0;
+.modal-content {
+  display: block;
+}
+
+.modal--with-example .modal-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.25rem;
   padding: 0 1.5rem;
 }
 
-.modal-example img,
-.modal-example video {
+.modal-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.modal--with-example .modal-header {
+  padding: 1.5rem 0 0;
+  text-align: left;
+}
+
+.modal--with-example .modal-body {
+  padding: 1rem 0 1rem;
+}
+
+.modal-example {
+  flex: 0 0 min(240px, 42%);
+  margin: 0;
+  padding: 1.5rem 0 0;
+}
+
+.modal-example__media {
+  margin: 0;
+}
+
+.modal-example__media img,
+.modal-example__media video {
   display: block;
   width: 100%;
-  max-height: 280px;
+  max-height: 220px;
   object-fit: cover;
   border-radius: 10px;
   background: var(--bg);
@@ -463,6 +545,29 @@ body {
   font-size: 0.875rem;
   color: var(--text-muted);
   border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  .modal--with-example .modal-content {
+    flex-direction: column;
+    padding: 0 1.25rem;
+  }
+
+  .modal-example {
+    flex: none;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .navbar-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {

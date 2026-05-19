@@ -1,11 +1,11 @@
 const rules = [
   {
-    id: "huen-paa",
+    id: "bid-i-skyggen",
     classic: true,
     icon: "fa-solid fa-graduation-cap",
-    name: "Huen skal sidde rigtigt",
-    desc: "Studenterhuen bæres med båndet fremad",
-    detail: "Båndet skal pege fremad, når huen bæres. Det er en grundlæggende regel, som de fleste studenter følger under eksamen og ved officielle lejligheder.",
+    name: "Bid i skyggen",
+    desc: "Betyder held og lykke!",
+    detail: "Bid i din vens skygge for at ønske dem held og lykke fremover!",
     example: ""
   },
   {

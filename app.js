@@ -6,7 +6,7 @@ const clips = [
     name: "Kassen",
     desc: "Drik 24 genstande på 24 timer",
     detail: "Har du hvad der skal til? 24 genstande på 24 timer og Firkants-klippet er dit! Laver du denne to dage i streg, kan du lave højhuset, hvor der placeres to kasser ovenpå hinanden!",
-    example: ""
+    example: "/logo.png"
   },
   {
     id: "firkanten",

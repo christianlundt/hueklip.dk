@@ -106,7 +106,8 @@ const clips = [
   },
   {
     id: "flagermusen",
-    icon: "fa-solid fa-bat",
+    icon: "fa-solid fa-person",
+    rotation: 180,
     name: "Flagermusen",
     desc: "Tag en bong mens du er på hovedet!",
     detail: "VÆR FORSIGTIG! Kan du drikke en bong mens du er på hovedet? Så har du fortjent Flagermusen!",

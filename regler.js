@@ -19,7 +19,6 @@ const rules = [
   },
   {
     id: "hvem-skal-give-en-kasse",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Hvem skal give en kasse til studentervognsturen?",
     desc: "Listen er lang!",
@@ -64,7 +63,6 @@ const rules = [
   },
   {
     id: "hak-i-huen",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Hak i huen",
     desc: "Kaster man op med huen på, skal der klippes et hak i skyggen",
@@ -73,7 +71,6 @@ const rules = [
   },
   {
     id: "udpumpning",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Udpumpning",
     desc: "Sendes man til udpumpning skal hele skyggen klippes af!",
@@ -82,7 +79,6 @@ const rules = [
   },
   {
     id: "udpumpning-sygeplejeske",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Scor en sygeplejerske",
     desc: "Scorer man en sygeplejerske i forbindelse med ens sygehusbesøg skal hageremmen fjernes",
@@ -91,7 +87,6 @@ const rules = [
   },
   {
     id: "kæreste",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Kærestens navn",
     desc: "Har man en kæreste skrives kærestens navn ved siden af hueeksamenskarakteren i midten af huen",
@@ -100,7 +95,6 @@ const rules = [
   },
   {
     id: "aftaler",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Frække aftaler",
     desc: "Skriv en fræk besked eller et telefonnummer under svedremmen",
@@ -109,7 +103,6 @@ const rules = [
   },
   {
     id: "drik-af-huen",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Drik af huen",
     desc: "Tisser studentern i bukserne skal studenterhuen bruges som et glas!",
@@ -118,7 +111,6 @@ const rules = [
   },
   {
     id: "slår-op",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Hvis kæresten slår op",
     desc: "Så skal metalknapperne i siden af studenterhuen klippes af!",
@@ -127,7 +119,6 @@ const rules = [
   },
   {
     id: "5-telefonnumre",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Mere end 5 telefonnumre?",
     desc: "Har du mere end 5 telefonnumre i svedremmen, må det hvide yderbetræk vendes rundt!",
@@ -136,7 +127,6 @@ const rules = [
   },
   {
     id: "kys-med-person-af-samme-køn",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Kys med person af samme køn",
     desc: "Kysser du med en person af samme køn må krokaden vendes på hovedet!",
@@ -145,7 +135,6 @@ const rules = [
   },
   {
     id: "scor-person-af-samme-køn",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Scor person af samme køn",
     desc: "Scorer du en person af samme køn skal krokaden tages helt af!",
@@ -154,10 +143,17 @@ const rules = [
   },
   {
     id: "scor-lærer",
-    classic: true,
     icon: "fa-solid fa-graduation-cap",
     name: "Scor en lærer",
     desc: "Scorer du en lærer, må du fjerne det hvide yderbetræk",
+    detail: "",
+    example: ""
+  },
+  {
+    id: "ølkapsel",
+    icon: "fa-solid fa-graduation-cap",
+    name: "Ølkapsel som krokade",
+    desc: "Drik 24 gensande på 24 timer og du må erstatte din krokade med en ølkapsel!",
     detail: "",
     example: ""
   }

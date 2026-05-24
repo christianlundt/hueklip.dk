@@ -1,5 +1,59 @@
 const rules = [
   {
+    id: "ingen-hue-før-student",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Tag ikke huen på før du bliver student",
+    desc: "Det bringer ulykke!",
+    detail: "Det siges dog, at hvis man hopper over huen 3 gange baglens, at denne ulykke udviskes!",
+    example: ""
+  },
+  {
+    id: "hilsner-i-huen",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Hilsner i huen",
+    desc: "Hilsner i huen giver lykke",
+    detail: "Ønsk dine kammerater held og lykke ved at skrive i deres hue. Dette kan også være sjovt at genlæse om 20, 30 eller 40 år!",
+    example: ""
+  },
+  {
+    id: "hvem-skal-give-en-kasse",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Hvem skal give en kasse til studentervognsturen?",
+    desc: "Listen er lang!",
+    detail: "Du skal give en kasse til din klassekammerater hvis du: 1. har det største huemål, 2. har det mindste huemål, 3. har klassens højeste gennemsnit eller 4. har klasses laveste gennemsnit",
+    example: ""
+  },
+  {
+    id: "hueeksamen",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Hueeksamens karakter",
+    desc: "Din hueeksamens karakter skal skrives i midten af din studenterhue",
+    detail: "Din sidste eksamen kaldes din hueeksamen. Din karakter fra denne eksamen skal skrives i midten af din studenterhue!",
+    example: ""
+  },
+  {
+    id: "12-til-hueeksamen",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "12 til hueeksamen",
+    desc: "Får du 12 i karakter til din sidste eksamen, skal du løbe efter studentervognen til det første stop!",
+    detail: "",
+    example: ""
+  },
+  {
+    id: "dumper-en-eksamen",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Dumper en eksamen",
+    desc: "Dumper du en eksamen skal hageremmen bruges og du skal løbe foran studentervognen til det første stop!",
+    detail: "",
+    example: ""
+  },
+  {
     id: "bid-i-skyggen",
     classic: true,
     icon: "fa-solid fa-graduation-cap",
@@ -9,45 +63,102 @@ const rules = [
     example: ""
   },
   {
-    id: "ingen-klip-foer",
+    id: "hak-i-huen",
     classic: true,
-    icon: "fa-solid fa-ban",
-    name: "Ingen klip før studentertiden",
-    desc: "Svedbåndet klippes først, når du har bestået",
-    detail: "Traditionelt klipper man ikke i svedbåndet, før man har bestået sin studentereksamen og er blevet student. Klip i huen markerer oplevelser efter studentertiden.",
+    icon: "fa-solid fa-graduation-cap",
+    name: "Hak i huen",
+    desc: "Kaster man op med huen på, skal der klippes et hak i skyggen",
+    detail: "Dette klip kan gentages flere gange, så længe du kaster op, skal du klippe et hak!",
     example: ""
   },
   {
-    id: "respekt-for-huen",
+    id: "udpumpning",
     classic: true,
-    icon: "fa-solid fa-hand-holding-heart",
-    name: "Respekt for huen",
-    desc: "Huen behandles med respekt",
-    detail: "Studenterhuen er et symbol på din uddannelse. Den må ikke kastes, trædes på eller behandles respektløst – heller ikke i festlige sammenhænge.",
+    icon: "fa-solid fa-graduation-cap",
+    name: "Udpumpning",
+    desc: "Sendes man til udpumpning skal hele skyggen klippes af!",
+    detail: "Da man i dag ikke længere udpumpes, gælder dette også, hvis man ender på skadestuen på grund af sit alkoholindtag!",
     example: ""
   },
   {
-    id: "klip-kun-efter",
-    icon: "fa-solid fa-scissors",
-    name: "Klip kun det, du har fortjent",
-    desc: "Et klip skal afspejle en reel oplevelse",
-    detail: "Hue-klip er ment som små minder og milepæle. Det anses som dårlig tone at klippe noget i huen, du ikke reelt har oplevet eller gennemført.",
+    id: "udpumpning-sygeplejeske",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Scor en sygeplejerske",
+    desc: "Scorer man en sygeplejerske i forbindelse med ens sygehusbesøg skal hageremmen fjernes",
+    detail: "",
     example: ""
   },
   {
-    id: "fortael-ikke-loegn",
-    icon: "fa-solid fa-scale-balanced",
-    name: "Ærlighed om klip",
-    desc: "Lad være med at lyve om dine klip",
-    detail: "Når andre spørger om dine klip, forventes det, at du kan fortælle sandheden om oplevelsen. At opdigte klip underminerer traditionen.",
+    id: "kæreste",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Kærestens navn",
+    desc: "Har man en kæreste skrives kærestens navn ved siden af hueeksamenskarakteren i midten af huen",
+    detail: "Ofte skriver kæresten selv sit navn i kærestens studenterhue",
     example: ""
   },
   {
-    id: "del-ikke-huen",
-    icon: "fa-solid fa-user-lock",
-    name: "Huen er personlig",
-    desc: "Lån ikke din studenterhue ud permanent",
-    detail: "Din studenterhue er personlig og følger dig gennem studietiden. Det er ualmindeligt at låne sin hue ud til andre på permanent basis.",
+    id: "aftaler",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Frække aftaler",
+    desc: "Skriv en fræk besked eller et telefonnummer under svedremmen",
+    detail: "",
+    example: ""
+  },
+  {
+    id: "drik-af-huen",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Drik af huen",
+    desc: "Tisser studentern i bukserne skal studenterhuen bruges som et glas!",
+    detail: "Gælder også hvis man kun tisser en smule i bukserne!",
+    example: ""
+  },
+  {
+    id: "slår-op",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Hvis kæresten slår op",
+    desc: "Så skal metalknapperne i siden af studenterhuen klippes af!",
+    detail: "",
+    example: ""
+  },
+  {
+    id: "5-telefonnumre",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Mere end 5 telefonnumre?",
+    desc: "Har du mere end 5 telefonnumre i svedremmen, må det hvide yderbetræk vendes rundt!",
+    detail: "",
+    example: ""
+  },
+  {
+    id: "kys-med-person-af-samme-køn",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Kys med person af samme køn",
+    desc: "Kysser du med en person af samme køn må krokaden vendes på hovedet!",
+    detail: "Gælder også tantekys!",
+    example: ""
+  },
+  {
+    id: "scor-person-af-samme-køn",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Scor person af samme køn",
+    desc: "Scorer du en person af samme køn skal krokaden tages helt af!",
+    detail: "",
+    example: ""
+  },
+  {
+    id: "scor-lærer",
+    classic: true,
+    icon: "fa-solid fa-graduation-cap",
+    name: "Scor en lærer",
+    desc: "Scorer du en lærer, må du fjerne det hvide yderbetræk",
+    detail: "",
     example: ""
   }
 ];

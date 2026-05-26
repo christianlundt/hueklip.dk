@@ -103,16 +103,6 @@ function initHuePage(items, pageConfig) {
       : `${items.length} ${pageConfig.countLabel} i alt`;
   }
 
-  function landscapeAdHtml() {
-    return `
-      <div class="ad-placeholder ad-placeholder--landscape">
-        <small>Google Ads</small>
-        <span>728 × 90</span>
-        <small>Landskabsbanner</small>
-      </div>
-    `;
-  }
-
   function openModal(item, row) {
     lastFocused = row;
     modalTitle.textContent = item.name;
@@ -138,6 +128,7 @@ function initHuePage(items, pageConfig) {
     overlay.hidden = false;
     overlay.classList.add("open");
     document.body.style.overflow = "hidden";
+    initModalAd();
     modalClose.focus();
   }
 
@@ -177,8 +168,7 @@ function initHuePage(items, pageConfig) {
   });
 
   document.getElementById("year").textContent = new Date().getFullYear();
-  document.getElementById("list-bottom-ad").innerHTML = landscapeAdHtml();
-  document.getElementById("modal-bottom-ad").innerHTML = landscapeAdHtml();
+  initPageAds();
 
   initPageLabels();
   renderRows();

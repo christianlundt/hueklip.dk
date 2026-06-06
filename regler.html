@@ -32,16 +32,12 @@
     </div>
   </header>
 
-  <section class="hero-intro" aria-label="Velkommen">
+  <section class="hero-intro hero-intro--compact" aria-label="Velkommen">
     <div class="site-center hero-intro__inner">
       <h1>Hue-regler</h1>
       <p>
         Ud over hue-klip findes der også uformelle regler og traditioner omkring studenterhuen.
-        Her finder du en oversigt over kendte hue-regler, som mange studenter følger.
-      </p>
-      <p>
-        Kender du en regel, vi mangler?
-        Send den gerne til <a href="mailto:info@hueklip.dk">info@hueklip.dk</a>, så tilføjer vi den.
+        Klik på en regel for at læse mere.
       </p>
     </div>
   </section>
@@ -102,28 +98,20 @@
   </div>
 
   <footer class="footer">
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="kontakt.html">Kontakt &amp; om os</a>
+      <a href="privatlivspolitik.html">Privatlivspolitik</a>
+      <a href="cookiepolitik.html">Cookiepolitik</a>
+    </nav>
     <p>&copy; <span id="year"></span> Hueklip.dk</p>
   </footer>
 
-  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-    <div class="modal">
-      <div class="modal-content">
-        <div class="modal-main">
-          <div class="modal-header">
-            <div class="modal-icon" id="modal-icon" aria-hidden="true"></div>
-            <h2 id="modal-title"></h2>
-          </div>
-          <div class="modal-body" id="modal-body"></div>
-        </div>
-        <aside class="modal-example" id="modal-example" hidden aria-label="Eksempel"></aside>
-      </div>
-      <aside class="modal-ad" id="modal-bottom-ad" aria-label="Reklame i popup"></aside>
-      <button type="button" class="modal-close" id="modal-close">Luk</button>
-    </div>
-  </div>
-
+  <script src="cookies.js"></script>
+  <script src="analytics.js"></script>
   <script src="ads.js"></script>
+  <script src="regler-data.js"></script>
   <script src="site.js"></script>
   <script src="regler.js"></script>
+  <script src="layout.js"></script>
 </body>
 </html>

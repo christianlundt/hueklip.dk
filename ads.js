@@ -2,7 +2,31 @@ const AD_CLIENT = "ca-pub-8289871084577228";
 const SLOT_HORIZONTAL = "9254373791";
 const SLOT_VERTICAL = "3974126951";
 
-let modalAdPushed = false;
+let adsScriptLoaded = false;
+
+function canShowAds() {
+  return typeof hasAnalyticsConsent === "function" && hasAnalyticsConsent();
+}
+
+function loadAdSenseScript() {
+  if (adsScriptLoaded || document.querySelector('script[src*="adsbygoogle.js"]')) {
+    adsScriptLoaded = true;
+    return Promise.resolve();
+  }
+
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${AD_CLIENT}`;
+    script.crossOrigin = "anonymous";
+    script.onload = () => {
+      adsScriptLoaded = true;
+      resolve();
+    };
+    script.onerror = resolve;
+    document.head.appendChild(script);
+  });
+}
 
 function createAdUnit(slotId) {
   const ins = document.createElement("ins");
@@ -32,7 +56,11 @@ function pushAd(container) {
   }
 }
 
-function initPageAds() {
+async function initPageAds() {
+  if (!canShowAds()) return;
+
+  await loadAdSenseScript();
+
   document.querySelectorAll("[data-ad-type='vertical']").forEach((container) => {
     mountAd(container, SLOT_VERTICAL, "vertical");
     pushAd(container);
@@ -43,20 +71,4 @@ function initPageAds() {
     mountAd(listAd, SLOT_HORIZONTAL, "horizontal");
     pushAd(listAd);
   }
-
-  const modalAd = document.getElementById("modal-bottom-ad");
-  if (modalAd) {
-    mountAd(modalAd, SLOT_HORIZONTAL, "horizontal");
-  }
-}
-
-function initModalAd() {
-  if (modalAdPushed) return;
-  const modalAd = document.getElementById("modal-bottom-ad");
-  if (!modalAd) return;
-  if (!modalAd.querySelector("ins.adsbygoogle")) {
-    mountAd(modalAd, SLOT_HORIZONTAL, "horizontal");
-  }
-  pushAd(modalAd);
-  modalAdPushed = true;
 }

@@ -40,8 +40,8 @@
         Hvert klip markerer en oplevelse, en tradition eller en milepæl fra studietiden.
       </p>
       <p>
-        Her kan du gennemse alle kendte hue-klip. Kender du et klip, vi mangler?
-        Send det gerne til <a href="mailto:info@hueklip.dk">info@hueklip.dk</a>, så tilføjer vi det.
+        Her kan du gennemse alle kendte hue-klip. Klik på et klip for at læse mere.
+        Kender du et klip, vi mangler? Send det gerne til <a href="mailto:info@hueklip.dk">info@hueklip.dk</a>.
       </p>
     </div>
   </section>
@@ -102,28 +102,20 @@
   </div>
 
   <footer class="footer">
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="kontakt.html">Kontakt &amp; om os</a>
+      <a href="privatlivspolitik.html">Privatlivspolitik</a>
+      <a href="cookiepolitik.html">Cookiepolitik</a>
+    </nav>
     <p>&copy; <span id="year"></span> Hueklip.dk</p>
   </footer>
 
-  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-    <div class="modal">
-      <div class="modal-content">
-        <div class="modal-main">
-          <div class="modal-header">
-            <div class="modal-icon" id="modal-icon" aria-hidden="true"></div>
-            <h2 id="modal-title"></h2>
-          </div>
-          <div class="modal-body" id="modal-body"></div>
-        </div>
-        <aside class="modal-example" id="modal-example" hidden aria-label="Eksempel"></aside>
-      </div>
-      <aside class="modal-ad" id="modal-bottom-ad" aria-label="Reklame i popup"></aside>
-      <button type="button" class="modal-close" id="modal-close">Luk</button>
-    </div>
-  </div>
-
+  <script src="cookies.js"></script>
+  <script src="analytics.js"></script>
   <script src="ads.js"></script>
+  <script src="clips-data.js"></script>
   <script src="site.js"></script>
   <script src="app.js"></script>
+  <script src="layout.js"></script>
 </body>
 </html>

@@ -143,6 +143,11 @@ body {
   color: var(--accent-hover);
 }
 
+.hero-intro--compact {
+  min-height: auto;
+  padding: 3rem 0;
+}
+
 /* Indhold (starter under intro) */
 .content-area {
   padding: 2.5rem 0 4rem;
@@ -317,7 +322,6 @@ body {
   gap: 0.25rem 1rem;
   padding: 1rem 1.25rem;
   border-bottom: 1px solid var(--border);
-  cursor: pointer;
   transition: background 0.15s ease;
 }
 
@@ -325,14 +329,8 @@ body {
   border-bottom: none;
 }
 
-.clip-list tbody tr:hover,
-.clip-list tbody tr:focus-visible {
+.clip-list tbody tr:hover {
   background: #faf7f2;
-}
-
-.clip-list tbody tr:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: -2px;
 }
 
 .clip-list .col-icon {
@@ -353,17 +351,33 @@ body {
   align-self: end;
 }
 
+.clip-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.clip-link:hover {
+  color: var(--accent);
+}
+
+.clip-link::after {
+  content: " ›";
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.clip-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .clip-list .col-desc {
   grid-column: 2;
   font-size: 0.9rem;
   color: var(--text-muted);
   align-self: start;
-}
-
-.clip-list .col-name::after {
-  content: " ›";
-  color: var(--text-muted);
-  font-weight: 400;
 }
 
 .no-results {
@@ -536,6 +550,241 @@ body {
   font-size: 0.875rem;
   color: var(--text-muted);
   border-top: 1px solid var(--border);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-nav a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: var(--accent-hover);
+}
+
+/* Detaljeside */
+.detail-page {
+  padding: 2rem 1.25rem 4rem;
+}
+
+.breadcrumb {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-hover);
+}
+
+.detail-card {
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detail-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.detail-icon {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.detail-icon i {
+  display: inline-block;
+}
+
+.detail-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.detail-header h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--accent);
+}
+
+.detail-lead {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.detail-body p {
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+  line-height: 1.7;
+}
+
+.detail-body p:last-child {
+  margin-bottom: 0;
+}
+
+.detail-example {
+  margin: 1.5rem 0 0;
+}
+
+.detail-example img,
+.detail-example video {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.detail-contact {
+  margin: 1.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.detail-contact a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.detail-bottom-ad {
+  margin-top: 0;
+}
+
+/* Juridiske sider */
+.legal-page {
+  padding: 2.5rem 1.25rem 4rem;
+  max-width: 42rem;
+}
+
+.legal-page h1 {
+  color: var(--accent);
+  margin: 0 0 0.5rem;
+}
+
+.legal-updated {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin: 0 0 2rem;
+}
+
+.legal-page section {
+  margin-bottom: 2rem;
+}
+
+.legal-page h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.75rem;
+  color: var(--text);
+}
+
+.legal-page p,
+.legal-page li {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.legal-page ul {
+  padding-left: 1.25rem;
+}
+
+.legal-page a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Cookie-banner */
+.cookie-banner {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 200;
+  padding: 1rem;
+  background: rgba(44, 36, 28, 0.5);
+}
+
+.cookie-banner__inner {
+  max-width: 40rem;
+  margin: 0 auto;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 12px 40px rgba(44, 36, 28, 0.2);
+}
+
+.cookie-banner__inner h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.cookie-banner__inner p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.cookie-banner__inner a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cookie-banner__btn {
+  padding: 0.625rem 1.125rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cookie-banner__btn--accept {
+  background: var(--accent);
+  color: #fff;
+}
+
+.cookie-banner__btn--accept:hover {
+  background: var(--accent-hover);
+}
+
+.cookie-banner__btn--decline {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.cookie-banner__btn--decline:hover {
+  border-color: var(--accent-soft);
+  color: var(--text);
 }
 
 @media (max-width: 600px) {

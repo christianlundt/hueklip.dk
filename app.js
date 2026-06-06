@@ -60,7 +60,7 @@ const clips = [
     icon: "fa-solid fa-water",
     name: "Bølgen",
     desc: "Nøgenbadning med huen på",
-    detail: "Tag dig en dykkert med huen på og optjen Bølgen!",
+    detail: "VÆR FORSIGTIG! Tag dig en dykkert med huen på og optjen Bølgen! Bølgen bør ikke udføres i slem beruset tilstand, sørg for at du selv og andre er i stand til at udføre klippet. Pas på med at få huen under vandet, da det godt kan fjerne hilsnerne der er skrevet indeni.",
     example: ""
   },
   {
@@ -93,7 +93,7 @@ const clips = [
     icon: "fa-solid fa-ferry",
     name: "Ubåden",
     desc: "Tag en bong mens du er under vandet",
-    detail: "VÆR FORSIGTIG! Bevis at du kan tage en bong under vandet og vis dit flotte Ubåds-klip frem!",
+    detail: "VÆR FORSIGTIG! Bevis at du kan tage en bong under vandet og vis dit flotte Ubåds-klip frem! Ubåden bør ikke udføres i slem beruset tilstand, sørg for at du selv og andre er i stand til at udføre klippet. Pas på med at få huen under vandet, da det godt kan fjerne hilsnerne der er skrevet indeni.",
     example: ""
   },
   {
@@ -143,6 +143,102 @@ const clips = [
     name: "Kronen",
     desc: "Løb nøgen rundt om din skole",
     detail: "Rektor bliver nok ikke glad, men Krone-klippet er et must have!",
+    example: ""
+  },
+  {
+    id: "Koen",
+    icon: "fa-solid fa-cow",
+    name: "Koen",
+    desc: "Tag en bong mens du rør ved en ko",
+    detail: "Et jylland must have!",
+    example: ""
+  },
+  {
+    id: "Cowboyen",
+    icon: "fa-solid fa-hat-cowboy",
+    name: "Hesten / Cowboyen",
+    desc: "Tag en bong mens du rider på en hest!",
+    detail: "Tør du sidde på en vaske ægte hest og tage en bong? Det må ikke være en kæphest!",
+    example: ""
+  },
+  {
+    id: "ol-ringene",
+    icon: "fa-solid fa-circle-notch",
+    name: "OL-Ringene",
+    desc: "Lav rundkørslen i 5 forskellige rundkørsler!",
+    detail: "Rundkørslen går ud på at skulle løbe nøgen rund i en rundkørsel. Gør du dette i 5 forskellige rundkørsler, må du klippe OL-Ringene i din svedrem!",
+    example: ""
+  },
+  {
+    id: "hajen",
+    icon: "fa-solid fa-fish-fins",
+    name: "Hajen",
+    desc: "24 shots på 12 minutter",
+    detail: "Drikker du som en haj? 24 shots på 12 minutter og Hajen er din! Nogle hardcore individer mener at Hajen er 24 shots på blot 2 minutter!",
+    example: ""
+  },
+  {
+    id: "fisken",
+    icon: "fa-solid fa-fish",
+    name: "Fisken",
+    desc: "24 shots på 24 minutter",
+    detail: "Kan du håndtere 24 shots på 24 minutter? Så har du forjent Fisken i din studenterhue!",
+    example: ""
+  },
+  {
+    id: "tragten",
+    icon: "fa-solid fa-filter",
+    name: "Tragten",
+    desc: "Tag en bong mens du sidder på toilettet!",
+    detail: "Direkte ind og direkte ud!",
+    example: ""
+  },
+  {
+    id: "ballonen",
+    icon: "fa-solid fa-egg",
+    name: "Ballonen",
+    desc: "Tag helium mens du har huen på",
+    detail: "Sjov stemme til en sjov aften. Sug helium til du får en sjov stemme og klip ballonen i din studenterhue!",
+    example: ""
+  },
+  {
+    id: "racerbilen",
+    icon: "fa-solid fa-car",
+    name: "Racerbilen",
+    desc: "Tag en bong ud af et vindue på en bil mens den kører!",
+    detail: "VÆR FORSIGTIG! Det bør absolut ikke være personen der kører bilen, der tager dette klip! Kør ikke i påvirket tilstand! Er du en vaske ægte spritbilist? Tag en bong ud af en bils vindue mens den kører og Racerbilen er klar til at blive klippet i din studenterhue!",
+    example: ""
+  },
+  {
+    id: "ægget",
+    icon: "fa-solid fa-egg",
+    name: "Ægget",
+    desc: "Klip dit hår af under studentertiden!",
+    detail: "Klar til et nyt look? For at må klippe Ægget i din studenterhue skal du klippe alt dit hår af!",
+    example: ""
+  },
+  {
+    id: "tyren",
+    icon: "fa-solid fa-angle-down",
+    name: "Tyren",
+    desc: "Tag en bong mens du ridder på en rodeotyr!",
+    detail: "En bong mens du ridder på en vaskeægte rodeotyr er kun for de seje og det fortjener da et klip! Får du taget en bong mens du sidder på en aktiv rodeotyr, må du klippe tyrens horn i din studenterhue! Pas på med at bære noget rødt!",
+    example: ""
+  },
+  {
+    id: "vejskiltet",
+    icon: "fa-solid fa-octagon",
+    name: "Vejskiltet",
+    desc: "Tag en bong mens du sidder oppe i et vejskilt!",
+    detail: "VÆR FORSIGTIG! Kan du klatre op i et vejskilt og tage en bong deroppe? Så fortjener du et Vejskilt klip i din hue! Bølgen bør ikke udføres i slem beruset tilstand, sørg for at du selv og andre er i stand til at udføre klippet!",
+    example: ""
+  },
+  {
+    id: "aben",
+    icon: "fa-solid fa-tree",
+    name: "Aben / Træet",
+    desc: "Tag en bong mens du hænger i et træ!",
+    detail: "VÆR FORSIGTIG! Kan du klatre op i et træ, hænge ned derfra og tage en bong? Så fortjener du et Abe klippet i din hue! Aben bør ikke udføres i slem beruset tilstand, sørg for at du selv og andre er i stand til at udføre klippet!",
     example: ""
   }
 ];

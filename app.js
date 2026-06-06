@@ -1,6 +1,5 @@
 initHuePage(clips, {
   itemBasePath: "klip/",
-  searchLabel: "Søg i hue-klip",
   searchPlaceholder: "Søg på navn eller beskrivelse…",
   classicTitle: "De klassiske",
   classicAria: "De klassiske hue-klip",

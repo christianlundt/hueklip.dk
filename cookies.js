@@ -21,8 +21,15 @@ function hasAnalyticsConsent() {
   return getConsent() === "accepted";
 }
 
+function closeCookieBanner(banner) {
+  banner.remove();
+  document.body.classList.remove("cookie-banner-open");
+}
+
 function ensureCookieBanner() {
   if (getConsent() || document.getElementById("cookie-banner")) return;
+
+  document.body.classList.add("cookie-banner-open");
 
   const banner = document.createElement("div");
   banner.id = "cookie-banner";
@@ -35,7 +42,7 @@ function ensureCookieBanner() {
       <h2 id="cookie-banner-title">Cookies på Hueklip.dk</h2>
       <p>
         Vi bruger cookies til at vise annoncer via Google AdSense og til statistik via Google Analytics.
-        Du kan vælge at acceptere eller afvise cookies. Læs mere i vores
+        Du skal vælge, om du accepterer eller afviser cookies, før du kan bruge siden. Læs mere i vores
         <a href="${resolvePath("cookiepolitik.html")}">cookiepolitik</a>.
       </p>
       <div class="cookie-banner__actions">
@@ -49,19 +56,18 @@ function ensureCookieBanner() {
 
   document.getElementById("cookie-accept").addEventListener("click", () => {
     setConsent("accepted");
-    banner.remove();
+    closeCookieBanner(banner);
     initAnalytics();
     initPageAds();
   });
 
   document.getElementById("cookie-decline").addEventListener("click", () => {
     setConsent("declined");
-    banner.remove();
+    closeCookieBanner(banner);
   });
 }
 
 function resolvePath(path) {
-  const depth = (window.location.pathname.match(/\//g) || []).length;
   const inSubfolder = window.location.pathname.includes("/klip/") || window.location.pathname.includes("/regler/");
   if (inSubfolder) return `../${path}`;
   return path;

@@ -2,7 +2,7 @@ function initHuePage(items, pageConfig) {
   const classicTbody = document.getElementById("clip-tbody-classic");
   const restTbody = document.getElementById("clip-tbody-rest");
   const searchInput = document.getElementById("clip-search");
-  const searchMeta = document.getElementById("search-meta");
+  const searchLabel = document.querySelector('label[for="clip-search"]');
   const noResults = document.getElementById("no-results");
   const classicTitle = document.getElementById("classic-title");
   const sectionDivider = document.getElementById("section-divider");
@@ -22,15 +22,34 @@ function initHuePage(items, pageConfig) {
     return `${pageConfig.itemBasePath}${encodeURIComponent(item.id)}.html`;
   }
 
+  function updateSearchLabel(count) {
+    if (searchLabel) {
+      searchLabel.textContent = `Søg i ${count} ${pageConfig.countLabel}`;
+    }
+  }
+
   function createRow(item) {
     const tr = document.createElement("tr");
+    const href = itemHref(item);
+    tr.className = "clip-row";
+    tr.tabIndex = 0;
     tr.dataset.id = item.id;
-    tr.setAttribute("role", "row");
+    tr.setAttribute("role", "link");
+    tr.setAttribute("aria-label", `${item.name}: ${item.desc}`);
     tr.innerHTML = `
       <td class="col-icon" role="gridcell"><i class="${item.icon}"${iconStyleAttr(item)} aria-hidden="true"></i></td>
-      <td class="col-name" role="gridcell"><a class="clip-link" href="${escapeHtml(itemHref(item))}">${escapeHtml(item.name)}</a></td>
+      <td class="col-name" role="gridcell">${escapeHtml(item.name)}</td>
       <td class="col-desc" role="gridcell">${escapeHtml(item.desc)}</td>
     `;
+    tr.addEventListener("click", () => {
+      window.location.href = href;
+    });
+    tr.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        window.location.href = href;
+      }
+    });
     return tr;
   }
 
@@ -62,14 +81,10 @@ function initHuePage(items, pageConfig) {
     classicTitle.classList.toggle("clip-section__title--hidden", visibleClassic === 0 || isSearching);
     sectionDivider.classList.toggle("section-divider--hidden", visibleClassic === 0 || visibleRest === 0 || isSearching);
 
-    searchMeta.textContent = isSearching
-      ? `${visibleTotal} ${pageConfig.countLabel} fundet`
-      : `${items.length} ${pageConfig.countLabel} i alt`;
+    updateSearchLabel(isSearching ? visibleTotal : items.length);
   }
 
   function initPageLabels() {
-    const searchLabel = document.querySelector('label[for="clip-search"]');
-    if (searchLabel) searchLabel.textContent = pageConfig.searchLabel;
     if (searchInput) searchInput.placeholder = pageConfig.searchPlaceholder;
     if (classicTitle) classicTitle.textContent = pageConfig.classicTitle;
     if (noResults) noResults.textContent = pageConfig.noResults;

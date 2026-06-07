@@ -315,32 +315,38 @@ body {
   border: 0;
 }
 
-.clip-list tbody tr {
+.clip-list tbody tr.clip-row-wrap {
+  display: table-row;
+}
+
+.clip-row-cell {
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.clip-list tbody tr.clip-row-wrap:last-child .clip-row-cell {
+  border-bottom: none;
+}
+
+a.clip-row {
   display: grid;
   grid-template-columns: 3rem 1fr;
   grid-template-rows: auto auto;
   gap: 0.25rem 1rem;
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
   transition: background 0.15s ease;
 }
 
-.clip-list tbody tr:last-child {
-  border-bottom: none;
-}
-
-.clip-list tbody tr.clip-row {
-  cursor: pointer;
-}
-
-.clip-list tbody tr.clip-row:hover,
-.clip-list tbody tr.clip-row:focus-visible {
+a.clip-row:hover {
   background: #faf7f2;
 }
 
-.clip-list tbody tr.clip-row:focus-visible {
+a.clip-row:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: -2px;
+  background: #faf7f2;
 }
 
 .clip-list .col-icon {
@@ -372,6 +378,10 @@ body {
   font-size: 0.9rem;
   color: var(--text-muted);
   align-self: start;
+}
+
+tr.clip-row-wrap[hidden] {
+  display: none;
 }
 
 .no-results {
@@ -639,6 +649,32 @@ body {
   margin-bottom: 0;
 }
 
+/* Farvede infobokse på klip-/regelsider – sæt baggrundsfarve med style="background-color: #HEX" i HTML */
+.detail-callout {
+  margin: 0 0 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(44, 36, 28, 0.1);
+  line-height: 1.7;
+}
+
+.detail-callout:last-child {
+  margin-bottom: 0;
+}
+
+.detail-callout p {
+  margin: 0 0 0.75rem;
+  color: var(--text);
+}
+
+.detail-callout p:last-child {
+  margin-bottom: 0;
+}
+
+.detail-callout strong {
+  font-weight: 700;
+}
+
 .detail-example {
   margin: 1.5rem 0 0;
 }
@@ -790,6 +826,27 @@ body.cookie-banner-open {
   color: var(--text);
 }
 
+.cookie-settings-btn {
+  padding: 0.625rem 1.125rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0.5rem 0 1rem;
+}
+
+.cookie-settings-btn:hover {
+  background: var(--accent-hover);
+}
+
+#cookie-choice-status {
+  font-weight: 600;
+  color: var(--text);
+}
+
 @media (max-width: 600px) {
   .modal--with-example .modal-content {
     flex-direction: column;
@@ -814,7 +871,7 @@ body.cookie-banner-open {
 }
 
 @media (max-width: 480px) {
-  .clip-list tbody tr {
+  a.clip-row {
     grid-template-columns: 2.5rem 1fr;
     padding: 0.875rem 1rem;
   }

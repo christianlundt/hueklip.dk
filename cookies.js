@@ -17,17 +17,33 @@ function setConsent(value) {
   }
 }
 
+function clearConsent() {
+  try {
+    localStorage.removeItem(COOKIE_KEY);
+  } catch (_) {
+    /* Ignorer hvis localStorage er blokeret */
+  }
+}
+
 function hasAnalyticsConsent() {
   return getConsent() === "accepted";
+}
+
+function consentLabel(value) {
+  if (value === "accepted") return "Accepteret";
+  if (value === "declined") return "Afvist";
+  return "Ikke valgt endnu";
 }
 
 function closeCookieBanner(banner) {
   banner.remove();
   document.body.classList.remove("cookie-banner-open");
+  updateCookieChoiceStatus();
 }
 
-function ensureCookieBanner() {
-  if (getConsent() || document.getElementById("cookie-banner")) return;
+function showCookieBanner() {
+  const existing = document.getElementById("cookie-banner");
+  if (existing) existing.remove();
 
   document.body.classList.add("cookie-banner-open");
 
@@ -41,8 +57,9 @@ function ensureCookieBanner() {
     <div class="cookie-banner__inner">
       <h2 id="cookie-banner-title">Cookies på Hueklip.dk</h2>
       <p>
-        Vi bruger cookies til at vise annoncer via Google AdSense og til statistik via Google Analytics.
-        Du skal vælge, om du accepterer eller afviser cookies, før du kan bruge siden. Læs mere i vores
+        Vi bruger cookies og lignende teknologier til personliggjorte reklamer, statistik og data,
+        der kan deles med eller sælges til tredjeparter. Du skal vælge, om du accepterer eller afviser,
+        før du kan bruge siden. Læs mere i vores
         <a href="${resolvePath("cookiepolitik.html")}">cookiepolitik</a>.
       </p>
       <div class="cookie-banner__actions">
@@ -57,14 +74,38 @@ function ensureCookieBanner() {
   document.getElementById("cookie-accept").addEventListener("click", () => {
     setConsent("accepted");
     closeCookieBanner(banner);
-    initAnalytics();
-    initPageAds();
+    window.location.reload();
   });
 
   document.getElementById("cookie-decline").addEventListener("click", () => {
     setConsent("declined");
     closeCookieBanner(banner);
+    window.location.reload();
   });
+}
+
+function ensureCookieBanner() {
+  if (getConsent()) return;
+  showCookieBanner();
+}
+
+function openCookiePreferences() {
+  clearConsent();
+  showCookieBanner();
+}
+
+function updateCookieChoiceStatus() {
+  const statusEl = document.getElementById("cookie-choice-status");
+  if (!statusEl) return;
+  statusEl.textContent = `Dit nuværende valg: ${consentLabel(getConsent())}.`;
+}
+
+function initCookieSettings() {
+  updateCookieChoiceStatus();
+  const changeBtn = document.getElementById("cookie-change-btn");
+  if (changeBtn) {
+    changeBtn.addEventListener("click", openCookiePreferences);
+  }
 }
 
 function resolvePath(path) {
@@ -75,6 +116,7 @@ function resolvePath(path) {
 
 function initCookieConsent() {
   ensureCookieBanner();
+  initCookieSettings();
   if (hasAnalyticsConsent()) {
     initAnalytics();
     if (typeof initPageAds === "function") initPageAds();
@@ -82,3 +124,5 @@ function initCookieConsent() {
 }
 
 document.addEventListener("DOMContentLoaded", initCookieConsent);
+
+window.openCookiePreferences = openCookiePreferences;

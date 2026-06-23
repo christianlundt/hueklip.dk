@@ -709,6 +709,36 @@ tr.clip-row-wrap[hidden] {
   font-weight: 700;
 }
 
+.detail-embeds {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  width: fit-content;
+  margin: 0 auto 1rem;
+}
+
+.detail-embed {
+  flex: 0 0 auto;
+}
+
+.detail-embed iframe {
+  display: block;
+  border: 0;
+}
+
+@media (max-width: 520px) {
+  .detail-embeds {
+    flex-wrap: wrap;
+  }
+
+  .detail-embed iframe {
+    max-width: 100%;
+  }
+}
+
 .detail-example {
   margin: 1.5rem 0 0;
 }

@@ -400,6 +400,40 @@ tr.clip-row-wrap[hidden] {
   margin-top: 2rem;
 }
 
+.list-bottom-note {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.list-bottom-note__title {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+
+.list-bottom-note p {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--text);
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list-bottom-note a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.list-bottom-note a:hover {
+  color: var(--accent-hover);
+}
+
 /* Modal */
 .modal-overlay {
   position: fixed;

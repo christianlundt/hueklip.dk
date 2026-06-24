@@ -769,6 +769,11 @@ tr.clip-row-wrap[hidden] {
   margin-top: 0;
 }
 
+.link-color a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* Juridiske sider */
 .legal-page {
   padding: 2.5rem 1.25rem 4rem;

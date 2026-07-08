@@ -76,6 +76,67 @@ body {
   color: var(--accent);
 }
 
+.navbar-dropdown {
+  position: relative;
+}
+
+.navbar-dropdown__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.navbar-dropdown__toggle:hover,
+.navbar-dropdown__toggle[aria-expanded="true"] {
+  color: var(--accent);
+}
+
+.navbar-dropdown__toggle i {
+  font-size: 0.7rem;
+  transition: transform 0.15s ease;
+}
+
+.navbar-dropdown__toggle[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+.navbar-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 100;
+  min-width: 13rem;
+  margin: 0;
+  padding: 0.35rem 0;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.navbar-dropdown__menu a {
+  display: block;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.navbar-dropdown__menu a:hover {
+  color: var(--accent);
+  background: var(--bg);
+}
+
 .navbar-brand {
   font-weight: 700;
   font-size: 1.2rem;
@@ -240,6 +301,95 @@ body {
   text-align: center;
 }
 
+.search-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search-toolbar .search-input {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+.filter-dropdown {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.filter-dropdown__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1rem;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filter-dropdown__toggle:hover,
+.filter-dropdown__toggle[aria-expanded="true"] {
+  color: var(--accent);
+  border-color: var(--accent-soft);
+}
+
+.filter-dropdown__toggle--active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.filter-dropdown__toggle i {
+  font-size: 0.7rem;
+  transition: transform 0.15s ease;
+}
+
+.filter-dropdown__toggle[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+.filter-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 50;
+  min-width: 14rem;
+  margin: 0;
+  padding: 0.5rem;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.filter-dropdown__option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filter-dropdown__option:hover {
+  background: var(--bg);
+}
+
+.filter-dropdown__option input {
+  flex-shrink: 0;
+  accent-color: var(--accent);
+}
+
 .search-input {
   width: 100%;
   padding: 0.75rem 1rem 0.75rem 2.75rem;
@@ -354,11 +504,12 @@ a.clip-row:focus-visible {
   align-self: center;
   text-align: center;
   font-size: 1.5rem;
-  color: var(--accent);
+  color: var(--icon-color, var(--accent));
 }
 
 .clip-list .col-icon i {
   display: inline-block;
+  color: inherit;
 }
 
 .clip-list .col-name {
@@ -380,7 +531,47 @@ a.clip-row:focus-visible {
   align-self: start;
 }
 
-tr.clip-row-wrap[hidden] {
+.col-quote {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  align-self: start;
+}
+
+a.clip-row:has(.col-quote) .col-icon {
+  grid-row: 1 / -1;
+  align-self: start;
+  padding-top: 0.1rem;
+}
+
+.col-tags {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.col-tag {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+  background-color: var(--tag-bg);
+  border: 1px solid color-mix(in srgb, var(--tag-bg) 65%, #2c241c 35%);
+}
+
+.clip-section--empty {
+  display: none;
+}
+
+.clip-list tbody tr.clip-row-wrap.is-filtered-out {
   display: none;
 }
 
@@ -965,6 +1156,12 @@ body.cookie-banner-open {
   .navbar-nav {
     width: 100%;
     justify-content: center;
+  }
+
+  .navbar-dropdown__menu {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
   }
 }
 

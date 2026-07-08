@@ -1,3 +1,4 @@
+const GA_ID = "G-JGZYX58HW6";
 let analyticsLoaded = false;
 
 function initAnalytics() {

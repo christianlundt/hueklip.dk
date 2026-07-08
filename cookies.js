@@ -1,5 +1,4 @@
 const COOKIE_KEY = "hueklip-cookie-consent";
-const GA_ID = "G-JGZYX58HW6";
 
 function getConsent() {
   try {
@@ -57,10 +56,9 @@ function showCookieBanner() {
     <div class="cookie-banner__inner">
       <h2 id="cookie-banner-title">Cookies på Hueklip.dk</h2>
       <p>
-        Vi bruger cookies og lignende teknologier til personliggjorte reklamer, statistik og data,
-        der kan deles med eller sælges til tredjeparter. Du skal vælge, om du accepterer eller afviser,
-        før du kan bruge siden. Læs mere i vores
-        <a href="${resolvePath("cookiepolitik.html")}">cookiepolitik</a>.
+        Vi bruger cookies til statistik (Google Analytics) og annoncer (Google AdSense).
+        Du skal vælge, om du accepterer eller afviser, før du kan bruge siden. Læs mere i vores
+        <a href="${resolvePath("privatlivspolitik.html")}">privatlivspolitik</a>.
       </p>
       <div class="cookie-banner__actions">
         <button type="button" class="cookie-banner__btn cookie-banner__btn--accept" id="cookie-accept">Accepter cookies</button>

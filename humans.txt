@@ -1,0 +1,16 @@
+/* TEAM */
+Udvikler: Christian Lundt
+Contact: cbl@dr.com
+Twitter: @christianlundt
+Location: Kolding, Danmark
+
+/* TECHNOLOGY COLOPHON */
+Standards: HTML5, CSS3
+Components: Next.js, Tailwind CSS
+Software: VS Code
+
+/* SITE */
+Last update: 2026/07/08
+Language: Dansk
+Doctype: HTML5
+Site: https://hueklip.dk

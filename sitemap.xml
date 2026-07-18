@@ -1,353 +1,307 @@
 <?xml version="1.0" encoding="UTF-8"?>
-		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:fo="http://www.w3.org/1999/XSL/Format"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-	<loc>https://hueklip.dk/</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://hueklip.dk/</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/index.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://hueklip.dk/index.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://hueklip.dk/regler.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/kassen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/kassen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/firkanten.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/firkanten.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/trekanten.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/trekanten.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/huset.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/huset.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/lynet.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/lynet.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/hjertet.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/hjertet.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/b%C3%B8lgen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/b%C3%B8lgen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/stjernen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/stjernen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/rundk%C3%B8rslen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/rundk%C3%B8rslen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/kornet.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/kornet.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/ub%C3%A5den.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/ub%C3%A5den.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/hammeren.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/hammeren.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/flagermusen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/flagermusen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/pstjernen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/pstjernen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/flammen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/flammen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/kirken.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/kirken.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/kronen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/kronen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/koen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/koen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/cowboyen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/cowboyen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/ol-ringene.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/ol-ringene.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/hajen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/hajen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/fisken.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/fisken.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/tragten.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/tragten.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/ballonen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/ballonen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/racerbilen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/racerbilen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/%C3%A6gget.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/%C3%A6gget.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/tyren.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/tyren.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/vejskiltet.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/vejskiltet.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/aben.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/aben.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/enhj%C3%B8rningen.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/enhj%C3%B8rningen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/pyramiden.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/pyramiden.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/superman.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/klip/superman.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/kontakt.html</loc>
-	<lastmod>2026-06-25T00:02:28+01:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://hueklip.dk/klip/sv%C3%A6vebanen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/privatlivspolitik.html</loc>
-	<lastmod>2026-07-08T00:00:00+02:00</lastmod>
-	<priority>1.0</priority>
+  <loc>https://hueklip.dk/klip/firekl%C3%B8veren.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/ingen-hue-f%C3%B8r-student.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/kontakt.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/hilsner-i-huen.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/privatlivspolitik.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/hueeksamen.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/ingen-hue-f%C3%B8r-student.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/12-til-hueeksamen.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/hilsner-i-huen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/dumper-en-eksamen.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/hueeksamen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/bid-i-skyggen.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/12-til-hueeksamen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/hvem-skal-give-en-kasse.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/dumper-en-eksamen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/hak-i-huen.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/bid-i-skyggen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/udpumpning.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/hvem-skal-give-en-kasse.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/udpumpning-sygeplejeske.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/hak-i-huen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/k%C3%A6reste.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/udpumpning.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/aftaler.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/udpumpning-sygeplejeske.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/drik-af-huen.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/k%C3%A6reste.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/sl%C3%A5r-op.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/aftaler.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/5-telefonnumre.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/drik-af-huen.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/kys-med-person-af-samme-k%C3%B8n.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/sl%C3%A5r-op.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/scor-person-af-samme-k%C3%B8n.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/5-telefonnumre.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/scor-l%C3%A6rer.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/kys-med-person-af-samme-k%C3%B8n.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/%C3%B8lkapsel.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/scor-person-af-samme-k%C3%B8n.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/regler/kommende-million%C3%A6r.html</loc>
-	<lastmod>2026-06-25T00:02:30+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/scor-l%C3%A6rer.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/ub%C3%A5den.html</loc>
-	<lastmod>2026-06-25T00:02:31+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/%C3%B8lkapsel.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-	<loc>https://hueklip.dk/klip/rundk%C3%B8rslen.html</loc>
-	<lastmod>2026-06-25T00:02:31+01:00</lastmod>
-	<priority>0.8</priority>
+  <loc>https://hueklip.dk/regler/kommende-million%C3%A6r.html</loc>
+  <lastmod>2026-07-08T16:46:59+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
-<url>
-	<loc>https://hueklip.dk/klip/b%C3%B8lgen.html</loc>
-	<lastmod>2026-06-25T00:02:32+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://hueklip.dk/klip/%C3%A6gget.html</loc>
-	<lastmod>2026-06-25T00:02:34+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://hueklip.dk/klip/enhj%C3%B8rningen.html</loc>
-	<lastmod>2026-06-25T00:02:36+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://hueklip.dk/regler/ingen-hue-f%C3%B8r-student.html</loc>
-	<lastmod>2026-06-25T00:02:37+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://hueklip.dk/regler/k%C3%A6reste.html</loc>
-	<lastmod>2026-06-25T00:02:39+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://hueklip.dk/regler/sl%C3%A5r-op.html</loc>
-	<lastmod>2026-06-25T00:02:40+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://hueklip.dk/regler/scor-person-af-samme-k%C3%B8n.html</loc>
-	<lastmod>2026-06-25T00:02:40+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://hueklip.dk/regler/kys-med-person-af-samme-k%C3%B8n.html</loc>
-	<lastmod>2026-06-25T00:02:40+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://hueklip.dk/regler/scor-l%C3%A6rer.html</loc>
-	<lastmod>2026-06-25T00:02:40+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://hueklip.dk/regler/kommende-million%C3%A6r.html</loc>
-	<lastmod>2026-06-25T00:02:40+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
-<url>
-	<loc>https://hueklip.dk/regler/%C3%B8lkapsel.html</loc>
-	<lastmod>2026-06-25T00:02:40+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
+
 </urlset>

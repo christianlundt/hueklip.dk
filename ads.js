@@ -1,85 +1,125 @@
-const AD_CLIENT = "ca-pub-8289871084577228";
-const SLOT_HORIZONTAL = "9254373791";
-const SLOT_VERTICAL = "3974126951";
+const AD_HREF = "https://højlydt.dk/";
+const AD_ALT = "Reklame for Højlydt.dk";
 
-let adsScriptLoaded = false;
+const VERTICAL_SIZE = { width: 160, height: 600 };
+const HORIZONTAL_SIZE = { width: 680, height: 90 };
 
-function canShowAds() {
-  return typeof hasAnalyticsConsent === "function" && hasAnalyticsConsent();
+const VERTICAL_ADS = ["vertical-a.webp", "vertical-b.webp"];
+const HORIZONTAL_ADS = ["horizontal-a.webp", "horizontal-b.webp", "horizontal-c.webp"];
+
+const PAGE_ADS = {
+  "index.html": {
+    vertical: ["vertical-a.webp", "vertical-b.webp"],
+    horizontal: ["horizontal-a.webp", "horizontal-b.webp"],
+  },
+  "regler.html": {
+    vertical: ["vertical-b.webp", "vertical-a.webp"],
+    horizontal: ["horizontal-b.webp", "horizontal-c.webp"],
+  },
+  "guides/drukspil.html": {
+    vertical: ["vertical-a.webp", "vertical-b.webp"],
+    horizontal: ["horizontal-c.webp", "horizontal-a.webp"],
+  },
+};
+
+let pageAdsMounted = false;
+
+function sitePrefix() {
+  const stylesheet = document.querySelector('link[href$="styles.css"]');
+  if (!stylesheet) return "";
+  const href = stylesheet.getAttribute("href") || "";
+  return href === "styles.css" ? "" : href.replace(/styles\.css$/, "");
 }
 
-function loadAdSenseScript() {
-  if (adsScriptLoaded || document.querySelector('script[src*="adsbygoogle.js"]')) {
-    adsScriptLoaded = true;
-    return Promise.resolve();
+function pageKey() {
+  const path = window.location.pathname.replace(/\\/g, "/");
+  const match = path.match(/([^/]+\/)?[^/]+\.html$/);
+  return match ? match[0] : "index.html";
+}
+
+function hashString(value) {
+  let hash = 0;
+  for (let i = 0; i < value.length; i += 1) {
+    hash = (hash * 31 + value.charCodeAt(i)) | 0;
   }
-
-  return new Promise((resolve) => {
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${AD_CLIENT}`;
-    script.crossOrigin = "anonymous";
-    script.onload = () => {
-      adsScriptLoaded = true;
-      resolve();
-    };
-    script.onerror = resolve;
-    document.head.appendChild(script);
-  });
+  return Math.abs(hash);
 }
 
-function createAdUnit(slotId, variant) {
-  const ins = document.createElement("ins");
-  ins.className = "adsbygoogle";
-  ins.style.display = "block";
-  ins.setAttribute("data-ad-client", AD_CLIENT);
-  ins.setAttribute("data-ad-slot", slotId);
-
-  if (variant === "vertical") {
-    ins.setAttribute("data-ad-format", "vertical");
-    ins.style.minHeight = "250px";
-  } else {
-    ins.setAttribute("data-ad-format", "auto");
-    ins.setAttribute("data-full-width-responsive", "true");
-    ins.style.minHeight = "90px";
-  }
-
-  return ins;
+function pickFrom(list, offset) {
+  return list[offset % list.length];
 }
 
-function mountAd(container, slotId, variant) {
+function adsForPage() {
+  const key = pageKey();
+  if (PAGE_ADS[key]) return PAGE_ADS[key];
+
+  const seed = hashString(key);
+  return {
+    vertical: [
+      pickFrom(VERTICAL_ADS, seed),
+      pickFrom(VERTICAL_ADS, seed + 1),
+    ],
+    horizontal: [
+      pickFrom(HORIZONTAL_ADS, seed),
+      pickFrom(HORIZONTAL_ADS, seed + 1),
+    ],
+  };
+}
+
+function adImageSrc(filename) {
+  return `${sitePrefix()}assets/ads/${filename}`;
+}
+
+function createAdLink(filename, variant) {
+  const size = variant === "vertical" ? VERTICAL_SIZE : HORIZONTAL_SIZE;
+  const link = document.createElement("a");
+  link.className = `ad-banner ad-banner--${variant}`;
+  link.href = AD_HREF;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer sponsored";
+  link.setAttribute("aria-label", AD_ALT);
+
+  const img = document.createElement("img");
+  img.src = adImageSrc(filename);
+  img.alt = AD_ALT;
+  img.width = size.width;
+  img.height = size.height;
+  img.decoding = "async";
+  img.loading = variant === "vertical" ? "eager" : "lazy";
+
+  const label = document.createElement("span");
+  label.className = "ad-banner__label";
+  label.textContent = "Betalt reklame";
+
+  link.appendChild(label);
+  link.appendChild(img);
+  return link;
+}
+
+function mountAd(container, filename, variant) {
+  if (!container || !filename) return;
   container.innerHTML = "";
   container.classList.add("ad-slot", `ad-slot--${variant}`);
-  container.appendChild(createAdUnit(slotId, variant));
+  container.appendChild(createAdLink(filename, variant));
 }
 
-function pushAd(container) {
-  const ins = container.querySelector("ins.adsbygoogle");
-  if (!ins || ins.dataset.adRequested === "true") return;
-  ins.dataset.adRequested = "true";
-  try {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  } catch (_) {
-    /* AdSense blokeret eller ikke klar endnu */
-  }
-}
+function initPageAds() {
+  if (pageAdsMounted) return;
+  pageAdsMounted = true;
 
-async function initPageAds() {
-  if (!canShowAds()) return;
-
+  const plan = adsForPage();
   const verticalContainers = document.querySelectorAll("[data-ad-type='vertical']");
-  const listAd = document.getElementById("list-bottom-ad");
-  if (verticalContainers.length === 0 && !listAd) return;
+  const horizontalContainers = document.querySelectorAll("[data-ad-type='horizontal']");
 
-  await loadAdSenseScript();
-
-  verticalContainers.forEach((container) => {
-    mountAd(container, SLOT_VERTICAL, "vertical");
-    pushAd(container);
+  verticalContainers.forEach((container, index) => {
+    const filename = container.dataset.adImage || plan.vertical[index] || plan.vertical[0];
+    mountAd(container, filename, "vertical");
   });
 
-  if (listAd) {
-    mountAd(listAd, SLOT_HORIZONTAL, "horizontal");
-    pushAd(listAd);
-  }
+  horizontalContainers.forEach((container, index) => {
+    const filename = container.dataset.adImage || plan.horizontal[index] || plan.horizontal[0];
+    mountAd(container, filename, "horizontal");
+  });
 }
+
+document.addEventListener("DOMContentLoaded", initPageAds);

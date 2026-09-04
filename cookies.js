@@ -117,7 +117,6 @@ function initCookieConsent() {
   initCookieSettings();
   if (hasAnalyticsConsent()) {
     initAnalytics();
-    if (typeof initPageAds === "function") initPageAds();
   }
 }
 

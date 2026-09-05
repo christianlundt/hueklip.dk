@@ -70,11 +70,20 @@ function adImageSrc(filename) {
   return `${sitePrefix()}assets/ads/${filename}`;
 }
 
+function adHref(filename, variant) {
+  const url = new URL(AD_HREF);
+  url.searchParams.set("utm_source", "hueklip.dk");
+  url.searchParams.set("utm_medium", "banner");
+  url.searchParams.set("utm_campaign", "hueklip");
+  url.searchParams.set("utm_content", filename.replace(/\.[^.]+$/, "") || variant);
+  return url.toString();
+}
+
 function createAdLink(filename, variant) {
   const size = variant === "vertical" ? VERTICAL_SIZE : HORIZONTAL_SIZE;
   const link = document.createElement("a");
   link.className = `ad-banner ad-banner--${variant}`;
-  link.href = AD_HREF;
+  link.href = adHref(filename, variant);
   link.target = "_blank";
   link.rel = "noopener noreferrer sponsored";
   link.setAttribute("aria-label", AD_ALT);
